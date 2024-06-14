@@ -40,7 +40,7 @@ const API_KEY = "8aa43650a17b4ae49f842838241206";
 async function getWeatherData(city) {
 
   try {
-    const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=3`);
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=3`);
     const data = await response.json();
     console.log(data);
     return data;
