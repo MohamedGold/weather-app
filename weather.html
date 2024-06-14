@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- * Title -->
+    <title>Weather App</title>
+    <!-- * Site Icon -->
+    <link rel="icon" href="./imgs/favicon.ico" />
+    <!-- * Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- * Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- * Css -->
+    <link rel="stylesheet" href="./css/weather.css" />
+  </head>
+  <body>
+    <!-- ! Navbar -->
+    <nav class="navbar navbar-expand-lg py-3 bg-body-tertiary">
+      <div class="container weather-nav">
+        <a class="navbar-brand" href="weather.html"
+          ><img class="logo" src="./imgs/logo.png" alt="logo" />
+          <div class="logo-name d-inline-block">
+            <span class="fw-bold">Weather</span>
+            <small class="d-block">Weather Api</small>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            class="navbar-nav ms-auto gap-4 mb-2 mb-lg-0 py-4 py-lg-0 text-center"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Live Cameras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Photos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ! Header -->
+    <div class="header position-relative">
+      <div class="container">
+        <div class="search-form">
+          <div class="search-input">
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Enter Your Location..."
+            />
+            <!-- <input type="button" value="Find" id="submit" /> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--! Weather Forecast -->
+    <div class="weather-forecast mb-5">
+      <div class="container">
+        <div class="forecast">
+          <div class="row p-0 m-0 forecast-container">
+            <!-- ! Today Forecast -->
+            <div class="col-md-12 col-lg-4 p-0">
+              <div class="today-forecast text-white h-100">
+                <!-- ! Forecast Header -->
+                <div
+                  class="forecast-h d-flex align-items-baseline justify-content-between"
+                  id="todayForecast"
+                >
+                  <p class="today-day"></p>
+
+                  <div class="today-month-box">
+                    <span id="todayDate"></span>
+                    <span class="today-month"></span>
+                  </div>
+                </div>
+                <!-- ! Forecast Content -->
+                <div class="forecast-content">
+                  <p class="location text-start ps-3 fs-3"></p>
+                  <div
+                    class="degree d-flex align-items-center justify-content-between"
+                  >
+                    <div class="num fw-bold">
+                      <span class="today-temp fw-bold"></span>
+                      <sup>o</sup>C
+                    </div>
+
+                    <div class="forecast-icon">
+                      <img
+                        src=""
+                        alt="wether-icon"
+                        class="today-cond-img"
+                        width="90"
+                      />
+                    </div>
+                  </div>
+                  <p
+                    class="today-cond-text text-info fs-5 text-center fw-bold"
+                  ></p>
+
+                  <div class="forecast-details text-center p-2 pb-3">
+                    <span class="humidity-box me-5"
+                      ><img src="./imgs/humidity.png" width="35" alt="icon" />
+                      <span class="humidity"></span
+                    ></span>
+                    <span class="wind-box me-5">
+                      <img src="./imgs/icon-wind.png" width="25" alt="wind" />
+                      <span class="wind"></span>
+                    </span>
+                    <span class="compass-box">
+                      <img
+                        src="./imgs/icon-compass.png"
+                        width="25"
+                        alt="compass"
+                      />
+                      <span class="wind-dir"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ! Second Forecast -->
+            <div class="col-md-12 col-lg-4 p-0">
+              <div class="second-forecast text-white h-100">
+                <!-- ! Forecast Header -->
+                <div
+                  class="forecast-h d-flex align-items-center justify-content-center"
+                  id="secondForecast"
+                >
+                  <p class="second-day d-inline text-center"></p>
+                </div>
+                <!-- ! Forecast Content -->
+                <div class="forecast-content text-center">
+                  <div class="row">
+                    <div class="cold-md-12">
+                      <div class="forecast-icon text-center my-5 mb-4">
+                        <img
+                          src=""
+                          width="50"
+                          alt="img"
+                          class="second-day-cond-img"
+                        />
+                      </div>
+                    </div>
+                    <div class="cold-md-12">
+                      <div class="degree text-center mb-0">
+                        <span class="second-day-max-temp"></span>
+                        <sup>o</sup>C
+                      </div>
+                    </div>
+                    <div class="cold-md-12 text-center fw-light">
+                      <small>
+                        <span class="second-day-min-temp"></span>
+                        <sup>o</sup>
+                      </small>
+                    </div>
+                    <div class="cold-md-12 my-3 text-info fw-bold fs-5">
+                      <p class="second-day-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ! Third Day -->
+            <div class="col-md-12 col-lg-4 p-0">
+              <div class="third-forecast text-white h-100">
+                <!-- ! Forecast Header -->
+                <div
+                  class="forecast-h d-flex align-items-center justify-content-center"
+                  id="thirdForecast"
+                >
+                  <p class="third-day d-inline text-center"></p>
+                </div>
+                <!-- ! Forecast Content -->
+                <div class="forecast-content text-center">
+                  <div class="row">
+                    <div class="cold-md-12">
+                      <div class="forecast-icon text-center my-5 mb-4">
+                        <img
+                          src=""
+                          width="50"
+                          alt="img"
+                          class="third-day-cond-img"
+                        />
+                      </div>
+                    </div>
+                    <div class="cold-md-12">
+                      <div class="degree text-center mb-0">
+                        <span class="third-day-max-temp"></span>
+                        <sup>o</sup>C
+                      </div>
+                    </div>
+                    <div class="cold-md-12 text-center fw-light">
+                      <small>
+                        <span class="third-day-min-temp"></span>
+                        <sup>o</sup>
+                      </small>
+                    </div>
+                    <div class="cold-md-12 my-3 text-info fw-bold fs-5">
+                      <p class="third-day-text"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ! Footer -->
+    <footer class="py-5">
+      <div class="container">
+        <div class="row justify-content-between align-items-center gy-3">
+          <div class="col-md-8">
+            <div class="form-subscription position-relative">
+              <input
+                type="text"
+                placeholder="Enter Your Email To Subscribe..."
+                class="footer-input"
+              />
+              <a href="#">
+                <input
+                  type="submit"
+                  value="Subscribe"
+                  class="footer-submit-btn"
+              /></a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="social flex-wrap d-flex flex-row gap-4">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright mt-5 text-white">
+          <p class="text-center">
+            Copyright &copy; 2024
+            <span class="text-info">Weather App</span> Designed by Gold. All
+            rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/weather.js"></script>
+  </body>
+</html>
